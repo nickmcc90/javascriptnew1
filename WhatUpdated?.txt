@@ -24,3 +24,5 @@ We are getting through the text on the rock paper scissors game.
 <9:33:21? How do we group the name and the due date together? Make an object.
 
 10:16:26
+
+Timestamp: 10:59:51;
