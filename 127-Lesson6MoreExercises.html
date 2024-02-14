@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 6 more exercises</title>
+    <style></style>
+  </head>
+  <body>
+
+    <button onclick="
+      playGame('heads');
+      ">Heads</button>
+    <button onclick="
+      playGame('tails');
+    ">Tails</button>
+
+    <script>
+      const score1 = JSON.parse(localStorage.getItem('score1')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function playGame(guess) {
+        const randomNum = Math.random();
+        const result = randomNum < 0.5 ? 'heads' : 'tails';
+
+        console.log(result === guess ? 'You win' : 'You lose');
+
+        if(guess === result) {
+          score1.wins++;
+        } else {
+          score1.losses++;
+        }
+        // console.log(`Your score: ${score.wins}. Computer's score: ${score.losses}.`);
+        console.log(score1);
+
+        localStorage.setItem('score1', JSON.stringify(score1));  // saving the score.
+      }
+
+    </script>
+  </body>
+</html>

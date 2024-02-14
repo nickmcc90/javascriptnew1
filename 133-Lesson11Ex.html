@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 11 Exercises!</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+      /*
+      const nums = [10, 20, 30];
+      nums[2] = 99;
+      console.log(nums);
+
+      getLastValue([1, 20, 22, 24, 5]);
+      getLastValue(['hi', 'hello', 'good']);
+
+      arraySwap(['hi', 'hello', 'good']);
+      arraySwap([1, 20, 22, 24, 5]);
+
+      function getLastValue (array) {
+        const last = array[array.length-1];
+        console.log(last);
+      }
+
+
+      function arraySwap (array) {
+        const sizing = array.length - 1;
+        let x = array[0];
+        let y = array[sizing];
+        array[0] = y;
+        array[sizing] = x;
+        console.log(array);
+      }
+      */
+
+      
+      //11d
+      for(let i = 0; i <= 10; i += 2) {
+        console.log(i);
+      }
+
+      //11e
+      for(let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+      let x = 0;
+      while(x <= 10) {
+        console.log(x);
+        x +=2;
+      }
+
+      let y = 5;
+      while(y >= 0) {
+        console.log(y)
+        y--;
+      }
+
+      const thisArray = [1,2,3];
+      for(let i = 0; i < thisArray.length; i++) {
+        thisArray[i] = thisArray[i] + 1;
+      }
+      console.log(thisArray);
+
+      function addOne (array) {
+        for(let i = 0; i < array.length; i++) {
+          array[i] = array[i] + 1;
+        }
+        console.log(array);
+      }
+
+      addOne([-2,-1,0,99]);
+
+      function addNum (array, num) {
+        for(let i = 0; i < array.length; i++) {
+          array[i] = array[i] + num;
+        }
+        console.log(array);
+      }
+
+      addNum([1,2,3], 2);
+
+      function addArrays (array1, array2) {
+        const array3 = [];
+        for(let i = 0; i < array1.length; i++) {
+          array3.push(array1[i]+array2[i]);
+        }
+        console.log(array3);
+      }
+
+      addArrays([1,3,4], [2,3,4]);
+
+      function countPositive(array) {
+        let count = 0;
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] > 0) {
+            count++;
+          }
+        }
+        console.log(count);
+      }
+
+      countPositive([-3, 4, 5, -34]);
+
+      //Challenge exercise
+      // return an object of the max and min of an array.
+
+      function minMax (array) {       // we should set the values to null so that we can change them if there are elements in the given array.
+        const obj = {
+          min: null,
+          max: null
+        };
+        for(let i = 0; i < array.length; i++) {
+          const result = array[i];
+          if(obj.min === null || obj.min > result) {
+            obj.min = result;
+          }
+          // we have two separate if statments to set a min and max value in case there is only one value.
+          if(obj.max === null || obj.max < result) {
+            obj.max = result;
+          }
+        }
+        console.log(obj);
+      }
+
+      minMax([-2, 3, -5, 7, 10]);
+      minMax([]);
+      minMax([3]);
+
+      //Challenge exercise
+      // returns an object from an array of strings and that says how many times each string appeared.
+
+      function countWords (array) {
+        const strings = {};
+
+        for(let i = 0; i < array.length; i++) {     // we need to make sure to have the property exist in the object before we continuously increment it.
+          let instance = array[i];
+          console.log(instance);
+          if(!strings[instance]) {    // if property doesn't exist..
+            strings[instance] = 1;    // we make it.
+          } else {                    // if it does exist...
+            strings[instance]++;      // we increment it.
+          }
+        }
+        return strings;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));     // remember to put the list inside of square brackets.
+      
+
+    </script>
+  </body>
+</html>
+
+<!--Timestamp: 9:26:17 see if live server is working.-->

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>More lesson 11 exercises.</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      console.log(searchIndex(['hello', 'search', 'world', 'search', 'good', 'search']));
+      console.log(searchIndex(['not', 'found']));
+
+      function searchIndex(array) {
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] === 'search') {
+            return i;
+          }
+        }
+        return -1;
+      }
+    
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+      function findIndex(array, word) {
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+// This code removes the first two eggs from the list.
+      // console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    
+      // function removeEgg (array) {
+      //   const array2 = [];
+      //   let counter = 1;
+      //   for(let i = 0; i < array.length; i++) {
+      //     if(array[i] === 'egg' && counter < 3) {
+      //       counter++;
+      //       continue;
+      //     }
+      //     array2.push(array[i]);
+      //   }
+      //   return array2;
+      // }
+
+        // This code removes the last 2 eggs from the list.
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham']
+    console.log(removeEgg(foods));
+    console.log(foods);
+    
+    function removeEgg (array) {
+      const arrayMod = array.slice(); // This creates a copy of the array, without modifying the original array.
+      const array2 = [];
+      let counter = 1;
+      arrayMod.reverse();
+      for(let i = 0; i < arrayMod.length; i++) {
+        if(arrayMod[i] === 'egg' && counter < 3) {
+          counter++;
+          console.log(counter);
+          continue;
+        }
+        array2.push(arrayMod[i]);
+      }
+      array2.reverse();
+      return array2;
+    }
+
+
+    // The famous FizzBuzz problem.
+    FizzBuzz();
+
+    function FizzBuzz () {
+      for(let i = 1; i <= 20; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+          continue;
+        } else if(i % 3 === 0) {
+          console.log('Fizz');
+          continue;
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+          continue;
+        }
+        console.log(i);
+      }
+    }
+
+    // This problem goes off of the findIndex() problem. We aren't using findIndex() in this problem.
+    // unique(['green', 'red', 'blue', 'red']);
+
+    // function unique(array) {
+    //   const freq = {};
+    //   for(let i = 0; i < array.length; i++) {
+    //     if(!freq[array[i]]) {
+    //       freq[array[i]] = 1;
+    //     } else {
+    //       continue;
+    //     }
+    //     //freq[array[i]].push(findIndex(array[i]));
+    //   }
+    //   console.log(freq);
+    // }
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+
+      function unique(array) {
+        const freq = {};
+        for(let i = 0; i < array.length; i++) {
+          const index = findIndex(array, array[i]);
+          if(!freq[array[i]]) {
+            freq[array[i]] = index;
+          } else {
+            continue;
+          }
+        }
+        const ans = [];
+        for(const property in freq)  {
+          ans.push(property)
+        }
+        return ans;
+      }
+    </script>
+  </body>
+</html>
+
+<!--Timestamp: 10:15:57, about to do problem 11p.-->
+
+<!--Timestamp: problem 11w. Run the code and look at the console.log(freq) to pick up where we left off.-->

@@ -1,0 +1,26 @@
+2/12 evening ->     133-Lesson11ExMore.html, 133-11x.html, 133-11x.css, 133-11x.js, 134-advancedfunctions.html, 134-rockpaperscissors.html,.css,.js.
+
+** go to 118 if you wanna copy doc code.
+
+
+Returning:
+We are getting through the text on the rock paper scissors game.
+
+<Timestamp: 5:51:33>
+
+<Timestamp: 6:02:45>
+
+<Timestamp: 6:40:51>
+
+7:34:02
+
+<Timestamp 8:11:25> Just finished the rock paper scissors template.
+
+<Timestamp 8:21:13> Going to start exercise 10i.
+
+<!--Timestamp 9:02:24--> We already made the for loop, let's see if supersimpledev does the same.
+
+
+<9:33:21? How do we group the name and the due date together? Make an object.
+
+10:16:26

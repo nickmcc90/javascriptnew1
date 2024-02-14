@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM projects</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="
+      subscribe();
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input class='js-input' placeholder="Cost of holder" onkeydown="  // onkeydown is an event listener. There are many events we can listen for.
+      handlecostKeydown(event);
+    ">
+    <button onclick="
+      calculateCost();
+    ">Calculate</button>
+    <p class="js-totally"></p>
+
+    <script>
+      String(25);   // This is the string function that turns anything into a string.
+
+      window.document //This is the same as document. Javascript adds window. before most things for us. Behind the scenes stuff.
+
+
+      function handlecostKeydown(event) {
+        if(event.key === 'Enter') {
+          calculateCost();
+        }
+      }
+
+      function calculateCost() {
+        const totalElement = document.querySelector('.js-input');
+        let cost = Number(totalElement.value); // HTML into JS objects are strings. To do the math correctly ahead, we change this to a number.
+
+        if(cost < 40) {       // We use .value for input elements, and .innerHTML for other things.
+          cost *= 100;
+          cost = cost + 1000;
+          cost /= 100;
+        }
+
+        document.querySelector('.js-totally').innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if(buttonElement.innerText === 'Subscribe') { // We use innerText to just get the text, and not any spaces or new lines around the code.
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+    </script>
+  </body>
+</html>

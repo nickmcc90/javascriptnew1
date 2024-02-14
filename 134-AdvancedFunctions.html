@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      // We can save functions inside variables.
+
+      const function1 = function greeting() {
+        console.log('hello2');
+      }
+
+      console.log(function1) // shows the stuff inside this variable.
+      console.log(typeof function1) // its a function.
+      function1(); // this'll run the function like normal even though it's a variable.
+    
+      
+      // If you've noticed, we've been able to call functions before they are written in the
+      // code. This is due to hoisting. However, when we save the function in a variable like
+      // above, hoisting does not apply.
+      
+      const object1 = {
+        num: 2,
+        fun: function() {       //There's no need for a function name here.
+          console.log('hello3');
+        }
+      }
+      object1.fun();      
+
+
+      // We can pass a function into a function.
+
+      function run(param) {
+        param();          //param stores a function inside of it. We can call this function using param.
+      }
+      run(function() {
+        console.log('hello4');
+      });
+
+      // setTimeout() allows us to run a function in the future...
+
+      setTimeout(function() {
+        console.log('timeout');
+      }, 3000); // first arg, a function we wanna run in the function. second arg, how long to wait before running the function in ms.
+      console.log('next line');
+
+      // setTimeout() is asynchoronus code. It won't wait for a line to finish before going to the next line.
+      // Synchoronous code is code that will wait until a line is done before going on to the next line. We've
+      // only written synchoronous code so far.
+
+      // setInterval(function() {
+      //   console.log('interval');
+      // }, 3000);  // same parameters as setTimeout(). setInterval() keeps running the function over and over in the intervals that you give it.
+    
+    
+      // There is another way to loop through arrays.
+
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function(value, index) {   // Loops through array, based on this function that we pass through. Second arg is the index.
+        console.log(index);
+        console.log(value);
+      });
+    
+    </script>
+  </body>
+</html>

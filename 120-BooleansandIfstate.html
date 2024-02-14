@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+    <style></style>
+  </head>
+  <body>
+
+
+    <script>
+      console.log(3<5);
+      console.log(typeof true);
+
+      /* '===' and '!===' and comparison opeators.
+          '==' makes both values equal by making both types the same.
+      */
+
+      if (true) {
+        console.log('hello');
+      }
+
+      /* */
+
+      const age = 18; /* Best practice is to use const for variables. */
+      if (age >= 16) {
+        console.log('You can drive');
+      }
+      else if (age>=14) {
+        console.log('Almost there!');
+      }
+      else {
+        console.log('You can not drive.');
+      }
+
+
+      const yes = true ? 'truthy' : 'falsey';
+      console.log(yes)                                // We can save ternary statements to a variable.
+
+
+      // Here is a guard operator...
+
+      const message = 5 && 'hello';
+      console.log(message);  // prints hello
+
+      // The code above is just like writing....
+
+      let message1;
+      if (message1) {
+        message1 = 'hello';
+      }
+
+      // Default operator
+
+      const currency = undefined || "USD";
+      console.log(currency);
+
+
+
+    </script>
+  </body>
+</html>

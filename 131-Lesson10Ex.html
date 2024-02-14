@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 10 exercises!</title>
+    <link rel="stylesheet" href="styles/131-Lesson10Ex.css">
+  </head>
+  <body>
+    <button class="js-button test-button">Test</button>
+
+    <button onclick="
+      toggler('.js-gaming-button');            // we can pass in its class
+    " class="js-gaming-button gaming-button">Gaming</button>
+
+    <button onclick="
+      toggler('.js-music-button');
+    " class="js-music-button gaming-button">Music</button>
+
+    <button onclick="
+      toggler('.js-tech-button');
+    " class="js-tech-button gaming-button">Tech</button>
+  </body>
+  <script src="scripts/131-Lesson10Ex.js">
+  </script>
+</html>
+
+<!--In order to only have one button on at a time, we first check to see if the selected button doesn't
+contain 'is-toggled' to prove that it's off. Then, we activate code that checks to see if another button is on before we turn this button on.
+In the case that another button is on, that means that it is the only button that has the class 'is-toggled', so we querySelector()
+the '.is-toggled' class to get that button. Then, we classList.remove('is-toggled') from it IF there is a button
+like that out there.-->

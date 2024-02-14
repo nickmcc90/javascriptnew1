@@ -1,0 +1,25 @@
+Javascript stores floating numbers weird in math equations.
+
+0.1 + 0.2 = 0.3, but the computer gives 0.300000000000004.
+
+This is because human integers are stored as 0's and 1's. With only 0's and 1's, it is hard to store decimals.
+
+Remember, when working with money in Javascript, change the dollar amount to cents, then divide the
+total by 100 to get the original amount.
+
+Instead of $20.95 + $7.99, we do....
+
+(2095 + 799) / 100
+
+
+Rounding numbers...
+Math.round(2.2) --> 2
+Math.round(2.8) --> 3
+
+Getting tax to be precise....
+
+Math.round((2095 + 799) * 0.1) / 100.
+
+Math.floor(2.8) equals 2. It rounds down.
+
+Math.ceil(2.2) equals 3. Always rounds up.

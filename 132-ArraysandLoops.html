@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      console.log(myArray[0]);
+      myArray[1] = 99;
+      console.log(myArray);
+
+      [1, 'hello', true, {name: 'socks' }, [1, 2]] // we can put all kinds of different stuff in arrays.
+
+      // Arrays have a weird behavior when we try to check the type of array.
+
+      console.log(typeof[1,2]);  // It will say that this is an object. It's right, but it's also an array.
+      Array.isArray([1,2]); // We need this array function to check instead.
+
+      console.log(myArray.length);
+
+      myArray.push(100);        // pushes a value to the back of the array.
+      console.log(myArray);
+
+      myArray.splice(0,1) // first arg is the index to remove, second arg is the number of values to remove.
+
+      console.log(myArray);
+
+
+      // NOW WE ARE GONNA LEARN ABOUT LOOPS
+
+      let i = 1;
+      while(i <= 5) {
+        console.log(i);
+        i++; 
+      }
+
+      for(let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+
+      let randomNumber = 0;
+      while(randomNumber < 0.5) {
+        randomNumber = Math.random();
+        console.log('man what the heck');
+      }
+
+
+      const todoList = [
+        'make dinner',
+        'watch Youtube',      // we need a for loop to print out all the values in this array.
+        'do the dishes'
+      ];
+
+      for(let i = 0; i < todoList.length; i++) {
+        console.log(todoList[i]);
+      }
+
+      // The accumulator pattern.
+
+      const nums = [1,1,3];
+      let total = 0;
+
+      for(let i = 0; i < nums.length; i++) {
+        const num = nums[i]
+        total += num;
+      }
+      console.log(total);
+
+      const numsDoubled = [];
+      for(let i = 0; i < nums.length; i++) {
+        let value = nums[i] * 2;
+        numsDoubled.push(value);
+      }
+      console.log(numsDoubled);
+
+      // arrays work in the same way that objects do in that they both reference some value, they aren't THAT value.
+
+      const array1 = [1,2,3];
+      const array2 = array1; //Array2 doesn't actually have the values in array1, it has array1's reference.
+      array2.push(4)
+      console.log(array1)  // Even though we changed array2, array1 still gets changed. They are both the same reference.
+
+      // If we make array2 equal to array1.slice(), this'll create a new array for array2 to reference, so they will be different, so instead..
+      const arrayy = [1,2,3];
+      const arrayyy = arrayy.slice();
+      arrayyy.push(3);
+      console.log(arrayy)     // Now making a change to one won't make a change to another.
+
+      //Destructuring
+
+      const [firstValue, secondValue] = [1,2,3];  //firstValue = 1, and secondValue = 2 here.
+
+      for(let i = 1; i <=10; i++) {
+        if(i === 3) {
+          continue;   // once i reaches 3, it skips it. Continue lets us skip one iteration of the loop.
+        }
+        console.log(i);
+        if(i == 8) {
+          break;    // once i reaches 8, break causes the loop to stop. 
+        }
+      }
+      
+      let xx = 0;
+      while(xx <= 10) { 
+        if(xx % 3 === 0) {
+          i++;                // Make sure to increment your i before the continue in a while loop, or else it'll run forever.              
+          continue;
+        }
+        console.log(xx);
+        xx++
+      }
+      
+
+    </script>
+  </body>
+</html>
+
+<!--Timestamp 8:30:06-->
+
+<!--Timestamp 9:02:24-->

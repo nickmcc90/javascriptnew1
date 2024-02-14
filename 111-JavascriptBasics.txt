@@ -1,0 +1,4 @@
+Basically just:
+alert('hello')
+doing math in the console log
+document.inner.HTML = "Good morning"      to add good morning only on the web page.

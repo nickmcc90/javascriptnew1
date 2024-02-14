@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To do list practice</title>
+    <link rel="stylesheet" href="styles/132-todoList.css">
+    <body>
+      <p>To Do List</p>
+      <div class="input-cssgrid">
+        <input class="js-input name-input" placeholder="Todo name">
+        <input class="js-due-date-input due-date-input" type="date"> <!--This input is a calendar type, just like how the type could be radio, checkbox, etc.-->
+        <button class="add-todo-button" onclick="
+          toDo();
+        ">Add</button>
+        </div>
+      </div>
+      <div class="js-todo-list cssgrid"></div>
+      <script src="scripts/132-todoList.js">
+      </script>
+    </body>
+  </head>
+</html>
+
+<!--Steps:
+1. Create an array to store the todos.
+2. When we click "add",
+3. Get text from textbox
+4. Add it to array
+5. console.log the array.
+
+-->

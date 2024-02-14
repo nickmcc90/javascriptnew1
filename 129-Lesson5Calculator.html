@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 5 calculator</title>
+    <style>
+      .vert {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .horiz {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="js-display"></p>
+
+    <div class="vert">
+      <div class="horiz">
+        <button onclick="
+        updateCalculation('1');
+        ">
+        1
+        </button>
+        <button onclick="
+        updateCalculation('2');
+        ">
+          2
+        </button>
+        <button onclick="
+        updateCalculation('3');
+        ">
+          3
+        </button>
+        <button onclick="
+        updateCalculation(' + ');
+        ">
+          +
+        </button>
+      </div>
+
+      <div class="horiz">
+        <button onclick="
+        updateCalculation('4');
+        ">
+        4
+        </button>
+        <button onclick="
+        updateCalculation('5');
+        ">
+          5
+        </button>
+        <button onclick="
+        updateCalculation('6');
+        ">
+          6
+        </button>
+        <button onclick="
+        updateCalculation(' - ');
+        ">
+          -
+        </button>
+      </div>
+
+      <div class="horiz">
+        <button onclick="
+        updateCalculation('7');
+        ">
+        7
+        </button>
+        <button onclick="
+        updateCalculation('8');
+        ">
+          8
+        </button>
+        <button onclick="
+        updateCalculation('9');
+        ">
+          9
+        </button>
+        <button onclick="
+        updateCalculation(' * ');
+        ">
+          *
+        </button>
+      </div>
+
+      <div class="horiz">
+        <button onclick="
+        updateCalculation('0');
+        ">
+        0
+        </button>
+        <button onclick="
+        updateCalculation('.');
+        ">
+          .
+        </button>
+        <button onclick="
+        calculation = eval(calculation);
+        document.querySelector('.js-display').innerHTML = calculation;
+        localStorage.setItem('calculation', calculation);
+        ">
+          =
+        </button>
+        <button onclick="
+        updateCalculation(' / ');
+        ">
+          /
+        </button>
+      </div>
+      <div class="horiz">
+        <button onclick="
+        calculation = ''
+        document.querySelector('.js-display').innerHTML = calculation;
+        localStorage.setItem('calculation', calculation);
+        ">
+          Clear
+        </button>
+      </div>
+    </div>
+
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || "";
+
+      document.querySelector('.js-display').innerHTML = calculation;
+
+      function updateCalculation(value) {
+        calculation += value;
+        document.querySelector('.js-display').innerHTML = calculation;
+        localStorage.setItem('calculation', calculation);
+        
+      }
+
+    </script>
+  </body>
+</html>
+
+<!--The places that we are storing the calculation are the equals, the clear, and the updateCalculation function.-->

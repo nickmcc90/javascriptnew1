@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model: DOM</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button> <!--common practice is to put js in front of stuff in classes if you plan on using javascript with it.-->
+    <script>
+      console.log(document.title);
+      document.title = 'Changed';
+
+      console.log(document.body); // This puts the body in js. DOM combines HTML and JS together.
+      console.log(typeof document.body); // This will say it is an object. This is a JS object now.
+
+      console.log(document.body.innerHTML) // This accesses all the HTML within the body. Console logging this should give everything in the body.
+
+      document.body.innerHTML = 'Changed' // This changes everything in the body to just this one string.
+
+
+      // Using this innerHTML property, JS can replace the HTML in the entire body to whatever we want. It has full control.
+
+
+
+      document.body.innerHTML = 'hello'  //Remember how objects work? Document is an object, with an object of body inside, with a property of innerHTML inside.
+      document.title = 'Good job!' // This changes the title of the webpage.
+
+      // Document has a bunch of objects that can model the webpage, hence DOM.s
+
+
+
+
+
+      // document.querySelector() lets us get any element from the page and put it inside JS.
+      console.log(document.querySelector('button')); // This will retrieve the first button from the HTML and put it into JS.
+      console.log(document.querySelector('button').innerHTML); // This gives us 'hello' because we took the innerHTML from the button. 
+      document.querySelector('button').innerHTML = 'Changed' // This changes the text in the first button from hello to changed.
+
+
+      // So, using the query function, we can get any element from inside the page, put it in JS, and then we can control the HTML inside that element.
+      // This allows us to only change the parts of the website that we need.
+   
+   
+      // Now we have a second button. Query selector will only let us get the first button.
+      // How can we select this second button? If the button has a class, we can.
+
+      const buttonElement = document.querySelector('.js-button'); // we put a dot in front, just like css.
+   
+      // These HTML elements are JS objects now, and objects are values that can be saved inside a variable.
+
+    </script>
+  </body>
+</html>

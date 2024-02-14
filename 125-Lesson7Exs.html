@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 7 exs</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+      function greet(name) {
+        console.log(`Hello ${name ? name : 'there'}!`);
+      }
+
+      greet();
+
+      // displays a name even if name is undefined.
+
+      function convertToFahrenheit(celsius) {
+        const fahrenheit = (celsius * 9 / 5) + 32;
+        console.log(fahrenheit)
+      }
+
+      convertToFahrenheit(25);
+
+      function convertTemperature(degrees, unit) {
+        if(unit === 'C') {
+          const fahrenheit = (degrees * 9 / 5) + 32;
+          console.log(fahrenheit+'F')
+        }
+
+        else if(unit === 'F') {
+          const celsius = (degrees - 32) * 5 / 9;
+          console.log(celsius+'C')
+        }
+      }
+
+      convertTemperature(25, 'C');
+      convertTemperature(86, 'F');
+
+    </script>
+  </body>
+</html>
