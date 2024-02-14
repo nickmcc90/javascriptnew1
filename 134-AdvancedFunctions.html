@@ -69,8 +69,12 @@
         'wash dishes',
         'watch youtube'
       ].forEach(function(value, index) {   // Loops through array, based on this function that we pass through. Second arg is the index.
+        if(value === 'wash dishes') {
+          return;
+        }
+        
         console.log(index);
-        console.log(value);
+        console.log(value);     // In forEach() statements, there is no continue. But we can achieve the same thing with a return statement.
       });
     
     </script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 12 exercises</title>
+    <style>
+      .start-button {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="
+        changer();
+      " class="js-start start-button">Start</button>
+
+      <button onclick="
+        addThenVanish();
+      " class="js-add-button">Add to Cart</button>
+
+      <p class="js-textspace"></p>
+
+      <button class="js-12g-add">Add</button>
+      <button class="js-12g-remove">Remove</button>
+    <script>
+      // save a function in a variable and run it twice.
+      const add = function() {
+        console.log(2+3);
+      }
+      add();
+      add();
+
+      // make a function that runs a function as a parameter twice.
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      fun = function() {
+        console.log('12b');
+      }
+
+      runTwice(fun);
+
+      // create a button that after 1 second, it changes to finished. Create a button that says Loading... immediately then says finished
+
+      function changer() {
+        const buttonElement = document.querySelector('.js-start');
+        buttonElement.innerHTML = 'Loading...'
+
+        setTimeout(function() {
+          buttonElement.innerHTML = 'Finished!'
+        }, 2000);
+
+
+
+      }
+
+      // 12e display 'added' after pressing a button, then have it disappear after 2 seconds. 12f make the timer reset after clicking again.
+      let timeoutId;
+      function addThenVanish() {
+        document.querySelector('.js-textspace').innerHTML = 'Added'
+
+        clearTimeout(timeoutId); // we write this code first so when we press it again, it clears, then starts the timer again.
+
+        timeoutId = setTimeout(function() {
+          document.querySelector('.js-textspace').innerHTML = '';
+        }, 2000); 
+      }
+
+      //12g. We're creating a messaging app. Make the title of the change every second.
+
+      // let messages = 2;
+      // document.title = 'App';
+      // setInterval(function() {
+      //   if(document.title === 'App') {
+      //     document.title = `(${messages}) New Messages!`;
+      //   } else {
+      //     document.title = 'App';
+      //   }
+        
+      // }, 1000)
+
+      // function updateMessages() {
+      //   messages 
+      // }
+
+// Left off on 12g. Uncomment the code above
+
+    </script>
+  </body>
+</html>
