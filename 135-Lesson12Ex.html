@@ -19,8 +19,12 @@
 
       <p class="js-textspace"></p>
 
-      <button class="js-12g-add">Add</button>
-      <button class="js-12g-remove">Remove</button>
+      <button onclick="
+        increaseMessages();
+      " class="js-12g-add">Add</button>
+      <button onclick="
+        decreaseMessages();
+      " class="js-12g-remove">Remove</button>
     <script>
       // save a function in a variable and run it twice.
       const add = function() {
@@ -67,22 +71,39 @@
         }, 2000); 
       }
 
-      //12g. We're creating a messaging app. Make the title of the change every second.
+      //12g. We're creating a messaging app. Make the title of the website change every second. Add and remove messages, when there are no messages, the title stops changing.
 
-      // let messages = 2;
-      // document.title = 'App';
-      // setInterval(function() {
-      //   if(document.title === 'App') {
-      //     document.title = `(${messages}) New Messages!`;
-      //   } else {
-      //     document.title = 'App';
-      //   }
+      let messages = 2;
+      let intervalId;
+      document.title = 'App';
+
+      appStarter();     //This function runs the title on opening of the page, since we start with 2 messages.
+
+      function appStarter () {
+        intervalId = setInterval(function() {
+        if(messages > 0) {
+          if(document.title === 'App') {            // This is how to make something swap while in a setInterval loop;
+            document.title = `(${messages}) New Messages!`;
+          } else {
+            document.title = 'App';
+          }
+        } else if(messages === 0) {
+          clearInterval(intervalId);
+          document.title = 'App'
+        }
         
-      // }, 1000)
+        }, 1000)
+      }
 
-      // function updateMessages() {
-      //   messages 
-      // }
+      function increaseMessages() {
+        messages += 1;
+        appStarter();
+      }
+
+      function decreaseMessages() {
+        messages -= 1;
+        appStarter();
+      }
 
 // Left off on 12g. Uncomment the code above
 

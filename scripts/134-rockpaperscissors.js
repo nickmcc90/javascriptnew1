@@ -6,13 +6,56 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+  showResult('rock');                     // It's important to do the arrow function always in here.
+});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {
+  showResult('paper');                     // It's important to do the arrow function always in here.
+});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+  showResult('scissors');                     // It's important to do the arrow function always in here.
+});
+
+document.querySelector('.js-auto-play-button').addEventListener('click', () => {
+  autoPlay();
+})
+
+document.querySelector('.js-reset-score-button').addEventListener('click', () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+
+  localStorage.removeItem('score');
+  updateScoreElement();
+})
+
+
+// We can add an event listener to the body of the html to make it able to play the game
+// with the keyboard!
+/*
+  remember
+*/
+
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r') {
+    showResult('rock');
+  } else if(event.key === 'p') {
+    showResult('paper');
+  } else if(event.key === 's') {
+    showResult('scissors');
+  }
+});
+
+
 let isAutoPlaying = false;
 console.log(isAutoPlaying);
 let intervalId;
 
 function autoPlay() {
   if(!isAutoPlaying) {
-    intervalId = setInterval(function() {   // This is how we stop an interval, saving it in an id, then clearInterval with the id.
+    intervalId = setInterval(() => {   // This is how we stop an interval, saving it in an id, then clearInterval with the id.
       const playerMove = pickComputerMove();
       showResult(playerMove);
     }, 1000)
