@@ -53,6 +53,28 @@
         return array.map(value => value + num);   //shorthand
       }
 
+      //12n function called removeEgg that removes all eggs from the array. Revised: removes the first two eggs from the array.
+      let counter = 0;
+      const removeEgg = foods => {
+        return foods.filter(value => {
+          if(value === 'egg') {
+            counter++;
+            if(counter > 2) {
+              return true;
+            } else {
+            return false;
+            }
+          } else {
+            return true;
+          }
+          
+        })
+      };
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+      //12p and 12q is going back to lesson 12 ex previously and changing everything to arrow functions and taking out onclicks.
+
 
     </script>
   </body>

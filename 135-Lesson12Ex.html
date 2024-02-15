@@ -9,23 +9,43 @@
     </style>
   </head>
   <body>
-    <button onclick="
-        changer();
-      " class="js-start start-button">Start</button>
+    <button class="js-start start-button">
+      Start
+    </button>
 
-      <button onclick="
-        addThenVanish();
-      " class="js-add-button">Add to Cart</button>
+      <button class="js-add-button js-add-to-cart-button">
+        Add to Cart
+      </button>
 
       <p class="js-textspace"></p>
 
-      <button onclick="
-        increaseMessages();
-      " class="js-12g-add">Add</button>
-      <button onclick="
-        decreaseMessages();
-      " class="js-12g-remove">Remove</button>
+      <button class="js-12g-add">
+        Add
+      </button>
+      <button class="js-12g-remove">
+        Remove
+      </button>
     <script>
+// The code below up to the next comment is from lesson12exmore.
+
+      document.querySelector('.start-button').addEventListener('click', () => {
+        changer();
+      })
+
+      document.querySelector('.js-add-to-cart-button').addEventListener('click', () => {
+        addThenVanish();
+      })
+
+      document.querySelector('.js-12g-add').addEventListener('click', () => {
+        increaseMessages();
+      })
+
+      document.querySelector('.js-12g-remove').addEventListener('click', () => {
+        decreaseMessages();
+      })
+
+
+
       // save a function in a variable and run it twice.
       const add = function() {
         console.log(2+3);
@@ -51,7 +71,7 @@
         const buttonElement = document.querySelector('.js-start');
         buttonElement.innerHTML = 'Loading...'
 
-        setTimeout(function() {
+        setTimeout(() => {
           buttonElement.innerHTML = 'Finished!'
         }, 2000);
 
@@ -66,7 +86,7 @@
 
         clearTimeout(timeoutId); // we write this code first so when we press it again, it clears, then starts the timer again.
 
-        timeoutId = setTimeout(function() {
+        timeoutId = setTimeout(() => {
           document.querySelector('.js-textspace').innerHTML = '';
         }, 2000); 
       }
@@ -80,7 +100,7 @@
       appStarter();     //This function runs the title on opening of the page, since we start with 2 messages.
 
       function appStarter () {
-        intervalId = setInterval(function() {
+        intervalId = setInterval(() => {
         if(messages > 0) {
           if(document.title === 'App') {            // This is how to make something swap while in a setInterval loop;
             document.title = `(${messages}) New Messages!`;
